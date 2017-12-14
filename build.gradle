@@ -190,20 +190,19 @@ repositories {
 }
 
 configurations {
-    provided
     embedded
-    compile.extendsFrom provided, embedded
+    compile.extendsFrom embedded
 }
 
 dependencies {
-    deobfCompile "MCMultiPart:MCMultiPart-experimental:${config.mcmp.version}:universal"
-    deobfCompile "net.industrial-craft:industrialcraft-2:${config.ic2.version}:dev"
-    deobfCompile "mezz.jei:jei_1.10.2:${config.jei.version}"
-    deobfCompile "net.darkhax.tesla:Tesla:${config.tesla.version}"
-    deobfCompile "li.cil.tis3d:TIS-3D:${config.tis3d.version}"
+    deobfProvided "MCMultiPart:MCMultiPart-experimental:${config.mcmp.version}:universal"
+    deobfProvided "net.industrial-craft:industrialcraft-2:${config.ic2.version}:dev"
+    deobfProvided "mezz.jei:jei_1.10.2:${config.jei.version}"
+    deobfProvided "net.darkhax.tesla:Tesla:${config.tesla.version}"
+    deobfProvided "li.cil.tis3d:TIS-3D:${config.tis3d.version}"
 
 /*
-    deobfCompile "mcp.mobius.waila:Waila:${config.waila.version}"*/
+    deobfProvided "mcp.mobius.waila:Waila:${config.waila.version}"*/
     //provided "codechicken:CodeChickenCore:${config.minecraft.version}-${config.ccc.version}:deobf"
     provided "codechicken:CodeChickenLib:${config.minecraft.version}-${config.ccl.version}:universal"
     //provided "codechicken:NotEnoughItems:${config.minecraft.version}-${config.nei.version}:deobf"
@@ -239,8 +238,8 @@ dependencies {
         exclude module: "CodeChickenLib"
     }
     //provided "coloredlightscore:ColoredLightsCore:${config.coloredlights.version}:api"
-    deobfCompile "com.enderio.core:EnderCore:${config.ec.version}"
-    deobfCompile("com.enderio:EnderIO:${config.eio.version}") {
+    deobfProvided "com.enderio.core:EnderCore:${config.ec.version}"
+    deobfProvided("com.enderio:EnderIO:${config.eio.version}") {
         exclude module: "appliedenergistics2"
         exclude module: "buildcraft"
         exclude module: "Waila"
